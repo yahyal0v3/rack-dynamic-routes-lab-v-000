@@ -4,9 +4,8 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      item_name = req.path.split(/items/).last
+      item_name = req.path.split("/items/").last
       item = Item.all.detect {|instance| instance.name == item_name}
-      binding.pry
       if item
         resp.write item.price
       else

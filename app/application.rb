@@ -9,5 +9,6 @@ class Application
       resp.write item.price
     else
       resp.status = 404
+    end
   end
 end

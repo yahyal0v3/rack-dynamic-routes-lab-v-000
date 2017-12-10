@@ -10,7 +10,6 @@ class Application
       if item != nil
         resp.write item.price
       else
-        resp.write
         resp.status = 400
       end
     else

@@ -6,6 +6,8 @@ class Application
     if req.path.match(/items/)
       item_mame = req.path.split(/items/).last
       item = Item.all.detect {|instance| instance.name == item_name}
-      rep.write item.price
+      resp.write item.price
+    else
+      resp.status = 404
   end
 end

@@ -6,7 +6,7 @@ class Application
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
       item = Item.all.detect {|i| i.name == item_name}
-      if item
+      if item != nil
         resp.write item.price
       else
         resp.write
